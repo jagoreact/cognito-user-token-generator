@@ -15,7 +15,7 @@ import AuthProvider from '../../components/auth';
 
 import IconButton from '@material-ui/core/IconButton';
 import ExitToApp from '@material-ui/icons/ExitToApp';
-
+import GitHubIcon from '@material-ui/icons/GitHub';
 const useStyles = makeStyles(theme => ({
     title: {
         flexGrow: 1
@@ -81,9 +81,13 @@ export default function Client() {
                 <Toolbar>
                     <VpnKeyIcon className={classes.logo} />
                     <Typography variant="h6" className={classes.title} noWrap>Cognito User Access Token Generator</Typography>
+                    <IconButton href="https://github.com/jagoreact/cognito-user-token-generator" color="inherit">
+                        <GitHubIcon />
+                    </IconButton>
                     <IconButton onClick={handleSignout} color="inherit">
                         <ExitToApp />
                     </IconButton>
+
                 </Toolbar>
             </AppBar>
             <main className={classes.content}>
