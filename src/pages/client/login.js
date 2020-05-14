@@ -154,6 +154,17 @@ export default function Login() {
         }
     }
 
+    const handleSignOut = async () => {
+        try {
+
+            await Auth.signOut()
+            setUser(null);
+
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     if (!user) {
         return (<form className={classes.form} noValidate onSubmit={handleSignIn}>
             <TextField
@@ -184,7 +195,7 @@ export default function Login() {
                 id="password"
                 value={form.password}
                 onChange={handleChange}
-                autoComplete="current-password"
+                autoComplete="new-password"
                 helperText={error.password}
                 error={error.password ? true : false}
             />
@@ -252,7 +263,7 @@ export default function Login() {
 
     return <>
 
-        <Typography variant="h6">Welcome, {user.username}!</Typography>
+        <Typography variant="h6">Welcome, {user.username} (<Button variant="text" onClick={handleSignOut}>SignOut</Button>)!</Typography>
         <Typography >Here are your access token (JWT):</Typography>
 
         <Token />

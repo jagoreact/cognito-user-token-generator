@@ -114,7 +114,7 @@ export default function SignIn() {
                     <VpnKeyIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5" className={classes.title}>
-                    Cognito Client Access Token Generator
+                    Cognito User Access Token Generator
         </Typography>
                 <form className={classes.form} noValidate onSubmit={handleSubmit}>
                     <TextField

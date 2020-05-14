@@ -80,7 +80,7 @@ export default function Client() {
             <AppBar position="absolute" >
                 <Toolbar>
                     <VpnKeyIcon className={classes.logo} />
-                    <Typography variant="h6" className={classes.title} noWrap>Cognito Client Access Token Generator</Typography>
+                    <Typography variant="h6" className={classes.title} noWrap>Cognito User Access Token Generator</Typography>
                     <IconButton onClick={handleSignout} color="inherit">
                         <ExitToApp />
                     </IconButton>
