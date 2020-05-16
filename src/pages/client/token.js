@@ -5,9 +5,10 @@ import fromUnixTime from 'date-fns/fromUnixTime'
 import { useClipboard } from 'use-clipboard-copy';
 import Button from '@material-ui/core/Button';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
-
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import RefreshIcon from '@material-ui/icons/Refresh';
+import { Inspector } from 'react-inspector';
 
 const useStyles = makeStyles((theme) => ({
     copyIcon: {
@@ -16,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
     right: {
         textAlign: 'right',
         paddingBottom: theme.spacing(1)
+    },
+    payload: {
+        paddingTop: theme.spacing(1)
     }
 }))
 export default function Token() {
@@ -73,5 +77,9 @@ export default function Token() {
             }}
 
         />
+        <div className={classes.payload}>
+            <Typography>Payload :</Typography>
+            <Inspector data={session.accessToken ? session.accessToken.payload : {}} expandLevel={1} />
+        </div>
     </>
 }
